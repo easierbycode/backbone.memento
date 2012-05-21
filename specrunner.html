@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backbone.Memento</title>
+  <link href="lib/jasmine-1.2.0/jasmine.css" media="all" rel="stylesheet" type="text/css"/>    
+	<script type="text/javascript" src="lib/jasmine-1.2.0/jasmine.js"></script>
+	<script type="text/javascript" src="lib/jasmine-1.2.0/jasmine-html.js"></script>
+	
+	<script type="text/javascript" src="public/javascripts/underscore.js"></script>
+  <script type="text/javascript" src="public/javascripts/jquery.js"></script>
+  <script type="text/javascript" src="public/javascripts/backbone.js"></script>
+  <script type="text/javascript" src="backbone.memento.js"></script>
+    
+  <script type="text/javascript" src="spec/javascripts/helpers/SpecHelper.js"></script>
+  <script type="text/javascript" src="spec/javascripts/helpers/sample.backbone.app.js"></script>
+  <script type="text/javascript" src="spec/javascripts/collection.spec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/ignoreAttributes.spec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/memento.spec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/reset.spec.js"></script>
+	
+	<script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      
+      var htmlReporter = new jasmine.HtmlReporter();
+      
+      jasmineEnv.addReporter(htmlReporter);
+      
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+      
+      window.onload = function() {
+        jasmineEnv.execute();
+      };
+    })();
+  </script>
+</head>
+<body>
+    <div id="jasmine_content"></div>
+</body>
+</html>
